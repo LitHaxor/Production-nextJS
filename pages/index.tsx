@@ -1,21 +1,49 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
-
-export default function Home() {
+import React from 'react'
+import { majorScale, Pane } from 'evergreen-ui'
+import HomeNav from '../components/HomeNav'
+import Container from '../components/Container';
+import Hero from '../components/Hero'
+import FeatureSection from '../components/FeatureSection';
+const Home = () => {
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>my next app</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+    <Pane>
+      <header>
+        <HomeNav/>
+        <Container>
+          <Hero/>
+        </Container>
+      </header>
+      <main>
+        <FeatureSection
+          title="Reacord Everything"
+          body="Blah blah"
+          image="https://via.placeholder.com/300"
+          invert
+        />
+        <FeatureSection
+          title="Delete Everything"
+          body="Blah blah"
+          image="https://via.placeholder.com/300"
+          invert
+        />
 
-      <main className={styles.main}>
-          <h1 className={styles.title}>Hello Next App</h1>
+      <FeatureSection
+          title="Uninstall Everything"
+          body="Blah blah"
+          image="https://via.placeholder.com/300"
+          invert
+        />
+    
       </main>
-
-      <footer className={styles.footer}>
-       
+      <footer>
+        <Pane background="overlay" paddingY={majorScale(9)}>
+          <Container>
+            Hello
+          </Container>
+        </Pane>
       </footer>
-    </div>
+    </Pane>
   )
 }
+
+export default Home
