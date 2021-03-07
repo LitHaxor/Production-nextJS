@@ -1,3 +1,4 @@
+
 export interface PostFrontMatter {
   title: string
   summary: string
@@ -8,3 +9,13 @@ export interface Post {
   source: string
   frontMatter: PostFrontMatter
 }
+
+export interface Auth {
+  links ? : {
+    name: string,
+    link: string
+  } [];
+  authButton ? : boolean
+}
+
+
