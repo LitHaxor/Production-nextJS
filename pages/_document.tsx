@@ -1,5 +1,5 @@
 import React from 'react'
-import Document, { Head, Main, NextScript } from 'next/document';
+import Document, { Head, Main, NextScript, Html } from 'next/document';
 import {extractStyles} from 'evergreen-ui';
 export default class MyDocument extends Document<any> {
     static getInitialProps({ renderPage }) {
@@ -24,9 +24,8 @@ export default class MyDocument extends Document<any> {
       const { css, hydrationScript } = this.props
   
       return (
-        <html>
+        <Html lang="en-us">
           <Head>
-            <title>SSR in Next.js</title>
             <style dangerouslySetInnerHTML={{ __html: css }} />
           </Head>
   
@@ -35,7 +34,7 @@ export default class MyDocument extends Document<any> {
             {hydrationScript}
             <NextScript />
           </body>
-        </html>
+        </Html>
       )
     }
   }
